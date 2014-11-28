@@ -1,0 +1,19 @@
+﻿@model IEnumerable<WebApplication.Models.Question>
+@{
+    ViewBag.Title = "Index";
+}
+
+
+@foreach (var question in Model)
+{
+    <section class="card">
+        <h2 class="card__title">@question.Title</h2>
+        <p class="card__text">@question.Body</p>
+        <ul class="tags">
+            @foreach (var tag in question.Tags)
+            {
+                <li class="tags__tag">@tag</li>
+            }
+        </ul>
+    </section>
+}

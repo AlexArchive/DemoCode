@@ -1,0 +1,26 @@
+﻿<html xmlns="http://www.w3.org/1999/xhtml">
+<head>
+    <title>StackOverflow</title>
+    <link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/themes/smoothness/jquery-ui.css" />
+    <link href="~/Content/Style.css" rel="stylesheet" />
+    <link href='http://fonts.googleapis.com/css?family=Roboto:400,500,300,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+    <header class="header">
+        <div class="header__inner">
+                <h1 class="header__title"><a href="/">StackOverflow</a></h1>
+            <div class="header__ask-button">
+                @Html.ActionLink("Ask Question", "AddQuestion", "Home", new { @class = "button" })
+            </div>
+        </div>
+    </header>
+    <div class="content">
+        @RenderBody()
+    </div>
+
+    <script src="http://ajax.googleapis.com/ajax/libs/jquery/1.10.2/jquery.min.js"></script>
+    <script src="http://ajax.googleapis.com/ajax/libs/jqueryui/1.10.4/jquery-ui.min.js"></script>
+    <script src="~/Scripts/application.js"></script>
+</body>
+</html>

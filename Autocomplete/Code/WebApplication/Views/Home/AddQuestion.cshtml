@@ -1,0 +1,17 @@
+﻿@model WebApplication.Models.QuestionInput
+
+@{
+    ViewBag.Title = "Add";
+}
+
+<div class="card">
+    <h2 class="card__title">Ask Question</h2>
+    @Html.ValidationSummary()
+    @using (Html.BeginForm())
+    {
+        @Html.TextBoxFor(m => m.Title, new { placeholder = "Title" })
+        @Html.TextAreaFor(m => m.Body, new { placeholder = "Question" })
+        @Html.TextBoxFor(m => m.Tags, new { id = "tag-input", placeholder = "Tags" })
+        <input type="submit" class="button button--post" value="Post your question" />
+    }
+</div>

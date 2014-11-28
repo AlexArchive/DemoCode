@@ -1,0 +1,194 @@
+﻿/*  Hi.
+    These styles are based on: http://codepen.io/chrisfrees/pen/AzsID. */
+
+* {
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    -webkit-font-smoothing: antialiased;
+    background: #efeff3;
+    color: #212121;
+    font-family: 'Roboto', sans-serif;
+}
+
+.header {
+    background: #2196F3;
+    border-top: 20px solid #1E88E5;
+    height: 180px;
+}
+
+.header__inner {
+    margin: 38px auto 0 auto;
+    max-width: 700px;
+    overflow: hidden;
+    padding: 0 20px;
+}
+
+.header__title {
+    color: #FFF;
+    float: left;
+    font-size: 24px;
+    font-weight: 500;
+}
+
+.header__title > a {
+    color: white;
+    text-decoration: none;
+}
+
+.header__ask-button {
+    float: right;
+    padding-top: 7px;
+}
+
+.card {
+    -ms-box-shadow: 0 2px 4px rgba(100, 100, 100, .1);
+    -webkit-box-shadow: 0 2px 4px rgba(100, 100, 100, .1);
+    background: #fff;
+    box-shadow: 0 2px 4px rgba(100, 100, 100, .1);
+    margin: 20px auto 0 auto;
+    max-width: 600px;
+    padding: 50px;
+    position: relative;
+}
+
+@media screen and (max-width: 600px) {
+    .card {
+        border-bottom: 1px lightgray solid;
+        margin: 0;
+    }
+}
+
+.card__title {
+    color: #1E88E5;
+    font-size: 21px;
+    font-weight: 500;
+}
+
+.card__text {
+    color: #212121;
+    font-size: 15px;
+    line-height: 22px;
+    margin-top: 20px;
+}
+
+.content {
+    padding-bottom: 20px;
+}
+
+.content .card:first-of-type {
+    margin-top: -80px;
+}
+
+.tags {
+    padding-top: 20px;
+}
+
+.tags__tag {
+    background-color: #c4dae9;
+    color: #4a6b82;
+    display: inline-block;
+    font-size: 14px;
+    margin: 2px;
+    padding: 5px 10px;
+}
+
+/* Invalidate browser button style */
+input[type="submit"] {
+    border: none;
+    cursor: hand;
+    font: inherit;
+    outline: none;
+}
+
+.button {
+    background-color: #1E88E5;
+    color: white;
+    padding: 10px;
+    text-decoration: none;
+}
+
+.button:hover {
+    background-color: white;
+    color: black;
+}
+
+.button--post:hover {
+    outline: 1px black solid;
+}
+
+form * {
+    display: block;
+    font: inherit;
+    margin: 10px 0;
+    width: 100%;
+}
+
+input[type="text"] ,
+textarea {
+    border: 1px gray dotted;
+    font-size: 17px;
+    padding: 10px;
+}
+
+input[type="text"]:focus ,
+textarea:focus {
+    outline: none;
+}
+
+textarea {
+    height: 200px;
+    resize: none;
+}
+
+#tag-input {
+    margin-bottom: 45px;
+}
+
+.validation-summary-errors {
+    background-color: lightpink;
+    border: 1px tomato solid;
+    margin: 10px 0;
+}
+
+.validation-summary-errors li {
+    list-style: none;
+    padding: 10px;
+}
+
+/* These are styles for the autocomplete */
+
+.ui-button {
+    -ms-border-radius: 0;
+    background: none;
+    border: 1px #e6e2df solid;
+    border-radius: 0;
+    font-family: inherit;
+    font-size: 15px;
+}
+
+.ui-state-active {
+    background-color: #f0f0f0 !important;
+}
+
+.ui-autocomplete {
+    -ms-border-radius: 0;
+    border: 1px #e6e2df solid;
+    border-radius: 0;
+    border-top: none;
+    font-family: inherit;
+    font-size: 15px;
+}
+
+.ui-autocomplete .ui-state-hover ,
+.ui-autocomplete .ui-state-focus {
+    -ms-border-radius: 0;
+    background: #f0f0f0 !important;
+    border: none;
+    border-radius: 0;
+    font-family: inherit;
+    font-size: inherit;
+    padding: inherit;
+}
