@@ -1,4 +1,4 @@
-﻿@model IList<Pagination.Persistence.Post>
+﻿@model PostPage
 @foreach (var post in Model)
 {
     <article>
@@ -7,4 +7,19 @@
         <p>@post.Content</p>
         <hr />
     </article>
+}
+
+@if (Model.TotalPageCount > 1)
+{
+    if (Model.HasPreviousPage)
+    {
+        @Html.ActionLink("Previous ", "Index", "Home", new { pageNumber = Model.PageNumber - 1 }, new { })
+    }
+    
+    if (Model.HasNextPage)
+    {
+        @Html.ActionLink("Next", "Index", "Home", new { pageNumber = Model.PageNumber + 1 }, new { })
+    }
+    
+    <p>Page @Model.PageNumber of @Model.TotalPageCount</p>
 }

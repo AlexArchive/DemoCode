@@ -3,7 +3,7 @@ using FizzWare.NBuilder;
 
 namespace Pagination.Persistence
 {
-    public class Seeder : DropCreateDatabaseAlways<ApplicationContext>
+    public class Seeder : DropCreateDatabaseIfModelChanges<ApplicationContext>
     {
         protected override void Seed(ApplicationContext context)
         {
