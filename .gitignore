@@ -43,3 +43,7 @@ Network Trash Folder
 Temporary Items
 .apdisk
 packages
+obj/
+[Bb]in
+[Dd]ebug*/
+[Rr]elease*/

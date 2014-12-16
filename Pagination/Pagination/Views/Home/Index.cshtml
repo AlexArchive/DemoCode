@@ -1,0 +1,10 @@
+﻿@model IList<Pagination.Persistence.Post>
+@foreach (var post in Model)
+{
+    <article>
+        <h2>@post.Title</h2>
+        <h4>Published by @post.Author on @post.PublishDate.ToShortDateString()</h4>
+        <p>@post.Content</p>
+        <hr />
+    </article>
+}

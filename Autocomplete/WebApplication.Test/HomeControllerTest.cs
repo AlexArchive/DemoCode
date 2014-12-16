@@ -42,7 +42,6 @@ namespace WebApplication.Test
         public void IndexReturnsModelWithCorrectRecordCount()
         {
             var repoStub = new QuestionRepoDouble();
-            repoStub.Questions.Add(new Question());
             var sut = new HomeController(repoStub);
             sut.WithCallTo(c => c.Index())
                 .ShouldRenderDefaultView()
