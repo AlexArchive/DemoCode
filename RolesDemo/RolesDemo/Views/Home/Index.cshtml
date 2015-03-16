@@ -1,0 +1,76 @@
+﻿@model IEnumerable<RolesDemo.Models.TweetModel>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<h2>Index</h2>
+
+@if (Request.IsAuthenticated)
+{
+    <p>Hello, @User.Identity.Name.</p>
+    <ul>
+
+        <li>
+            @Html.ActionLink("Logout", "Logout", "Account")
+        </li>
+
+        @if (User.IsInRole("Admin"))
+        {
+            <li>
+                @Html.ActionLink("Users", "Index", "Users")
+            </li>
+        }
+    </ul>
+}
+else
+{
+    <ul>
+        <li>
+            @Html.ActionLink("Login", "Login", "Account")
+        </li>
+        <li>
+            @Html.ActionLink("Register", "Register", "Account")
+        </li>
+    </ul>
+}
+@if (Request.IsAuthenticated)
+{
+    @Html.Action("Create", "Tweet")
+}
+
+<table>
+    <thead>
+        <tr>
+            <th>Tweet</th>
+            <th>Author</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+        @foreach (var tweet in Model)
+        {
+            <tr>
+                @if (tweet.AuthorIsPremium)
+                {
+                    <td style="color: red">
+                        @tweet.Text
+                    </td>
+                }
+                else
+                {
+                    <td>
+                        @tweet.Text
+                    </td>
+                }
+                <td>@tweet.AuthorUserName</td>
+                <td>
+                    @if (User.Identity.Name == tweet.AuthorUserName || User.IsInRole("Admin"))
+                    {
+                        @Html.ActionLink("Delete", "Delete", "Tweet", new { id = tweet.Id }, new { })
+                    }
+                </td>
+            </tr>
+        }
+    </tbody>
+</table>

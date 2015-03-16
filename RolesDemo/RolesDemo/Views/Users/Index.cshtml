@@ -1,0 +1,34 @@
+﻿@model IEnumerable<RolesDemo.Models.UserModel>
+
+@{
+    ViewBag.Title = "title";
+}
+
+
+@Html.ActionLink("< Go Back", "Index","Home")
+
+<table>
+    <thead>
+        <tr>
+            <th>Username</th>
+            <th>Action</th>
+        </tr>
+    </thead>
+    <tbody>
+
+        @foreach (var user in Model)
+        {
+            <tr>
+                <td>@user.UserName</td>
+                <td>
+                    @Html.ActionLink(
+                        user.IsPremium ? "Remove premium" : "Add premium",
+                        "Upgrade", "Users",
+                        new { id = user.UserId },
+                        new { })
+                </td>
+            </tr>
+        }
+
+    </tbody>
+</table>

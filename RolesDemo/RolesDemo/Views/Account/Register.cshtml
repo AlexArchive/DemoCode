@@ -1,0 +1,13 @@
+﻿@model RolesDemo.Models.RegisterInputModel
+
+@{
+    ViewBag.Title = "Register";
+}
+
+<h2>Register</h2>
+
+@using (Html.BeginForm())
+{
+    @Html.EditorForModel()
+    <input type="submit" value="Register"/>
+}
